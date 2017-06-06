@@ -15,7 +15,7 @@
   	</resultMap>
   	
   	<select id="selectAddressById" parameterType="int" resultMap="AddressResult">
-  		select * from addresses where addr_id=#{addrId}
+  		select * from ADDRESSES where addr_id=#{addrId}
   	</select>
   	
 </mapper>

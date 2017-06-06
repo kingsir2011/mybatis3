@@ -13,6 +13,6 @@ import com.mybatis3.domain.Address;
  */
 public interface AddressMapper 
 {
-	@Select("select addr_id as addrId, street, city, state, zip, country from addresses where addr_id=#{id}")
+	@Select("select addr_id as addrId, street, city, state, zip, country from ADDRESSES where addr_id=#{id}")
 	Address selectAddressById(int id);
 }

@@ -43,31 +43,31 @@
 	</resultMap>
 	
 	<select id="findAllStudents" resultMap="StudentResult">
-    	select * from Students
+    	select * from STUDENTS
   	</select>
   	
   	<select id="findStudentById" parameterType="int" resultMap="StudentWithAddressNestedSelect">
-    	select * from Students where stud_id=#{studId}
+    	select * from STUDENTS where stud_id=#{studId}
   	</select>
   	  	  	
   	<select id="selectStudentWithAddress" parameterType="int" resultMap="StudentWithAddressNestedResultMap">
   		select stud_id, name, email,phone, a.addr_id, street, city, state, zip, country
-  		FROM students s left outer join addresses a on s.addr_id=a.addr_id
+  		FROM STUDENTS s left outer join ADDRESSES a on s.addr_id=a.addr_id
 		where stud_id=#{studId}
   	</select>
   	
   	<insert id="insertStudent" parameterType="Student" useGeneratedKeys="true" keyProperty="studId">
-  		insert into students(name,email,addr_id, phone)
+  		insert into STUDENTS(name,email,addr_id, phone)
   		values(#{name},#{email},#{address.addrId},#{phone})
   	</insert>
   	
   	<insert id="insertStudentWithMap" parameterType="hashmap" useGeneratedKeys="true" keyProperty="studId">
-  		insert into students(name,email,addr_id,phone)
+  		insert into STUDENTS(name,email,addr_id,phone)
   		values(#{name},#{email},#{address.addrId},#{phone})
   	</insert>
   	
   	<update id="updateStudent" parameterType="Student">
-  		update students 
+  		update STUDENTS
   		<!-- set 
   		name=#{name}, 
   		email=#{email}, 
@@ -83,7 +83,7 @@
   	</update>
   	
   	<delete id="deleteStudent" parameterType="int">
-  		delete from students where stud_id=#{studId}
+  		delete from STUDENTS where stud_id=#{studId}
   	</delete>
   	
 </mapper>

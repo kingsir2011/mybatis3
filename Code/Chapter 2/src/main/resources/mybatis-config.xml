@@ -5,8 +5,8 @@
 <configuration>
 
 	<properties resource="application.properties">
-		<property name="jdbc.username" value="root"/>
-  		<property name="jdbc.password" value="verysecurepwd"/>	
+		<property name="jdbc.username" value="cmszdba"/>
+  		<property name="jdbc.password" value="Cmsz@dev03!"/>
 	</properties>
 	
 	<!-- <settings>

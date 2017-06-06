@@ -6,8 +6,8 @@
 
 	<!--  This file is for a reference purpose for various configuration options -->
 	<properties resource="application.properties">
-		<property name="username" value="db_user"/>
-  		<property name="password" value="verysecurepwd"/>	
+		<property name="username" value="cmszdba"/>
+  		<property name="password" value="Cmsz@dev03!"/>
 	</properties>
 	
 	<settings>

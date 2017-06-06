@@ -13,11 +13,11 @@
 	</resultMap>
   
   	<select id="findAllStudents" resultMap="StudentResult">
-    	select * from Students
+    	select * from STUDENTS
   	</select>
   	
   	<select id="findStudentById" parameterType="int" resultType="Student">
-    	select stud_id as studId, name, email, dob from Students where stud_id=#{studId}
+    	select stud_id as studId, name, email, dob from STUDENTS where stud_id=#{studId}
   	</select>
   	
   	<insert id="insertStudent" parameterType="Student" useGeneratedKeys="true" keyProperty="studId">

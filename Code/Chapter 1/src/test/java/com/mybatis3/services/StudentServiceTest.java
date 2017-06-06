@@ -54,7 +54,7 @@ public class StudentServiceTest
 	public void testCreateUStudent() 
 	{
 		Student student = new Student();
-		int id = 4;
+		int id = 3;
 		student.setStudId(id);
 		student.setName("student_"+id);
 		student.setEmail("student_"+id+"gmail.com");

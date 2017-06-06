@@ -20,7 +20,7 @@ public class TutorDynaSqlProvider
 	{
 		return new SQL() {{
 			SELECT("tutor_id as tutorId, name, email");
-		    FROM("tutors");
+		    FROM("TUTORS");
 		  }}.toString();
 	}
 	
@@ -34,7 +34,7 @@ public class TutorDynaSqlProvider
 
 		return new SQL() {{
 			SELECT("tutor_id as tutorId, name, email");
-		    FROM("tutors");
+		    FROM("TUTORS");
 		    WHERE("tutor_id="+tutorId);
 		}}.toString();
 	}
@@ -48,7 +48,7 @@ public class TutorDynaSqlProvider
 		
 		return new SQL() {{
 			SELECT("tutor_id as tutorId, name, email");
-		    FROM("tutors");
+		    FROM("TUTORS");
 		    WHERE("name=#{name} AND email=#{email}");
 		}}.toString();
 	}
@@ -103,8 +103,8 @@ public class TutorDynaSqlProvider
 			SELECT("a.addr_id, street, city, state, zip, country");
 			SELECT("course_id, c.name as course_name, description, start_date, end_date");
 			FROM("TUTORS t");
-			LEFT_OUTER_JOIN("addresses a on t.addr_id=a.addr_id");
-			LEFT_OUTER_JOIN("courses c on t.tutor_id=c.tutor_id");
+			LEFT_OUTER_JOIN("ADDRESSES a on t.addr_id=a.addr_id");
+			LEFT_OUTER_JOIN("COURSES c on t.tutor_id=c.tutor_id");
 			WHERE("t.TUTOR_ID = #{id}");
 		}}.toString();
 

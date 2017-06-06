@@ -18,9 +18,9 @@ public class JdbcStudentService
 {
 	
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://localhost:3306/elearning";
-	private static final String USERNAME = "root";
-	private static final String PASSWORD = "admin";
+	private static final String URL = "jdbc:mysql://mydev03:3306/elearning";
+	private static final String USERNAME = "cmszdba";
+	private static final String PASSWORD = "Cmsz@dev03!";
 
 	public static void main(String[] args)
 	{
@@ -36,7 +36,7 @@ public class JdbcStudentService
 		service.createStudent(newStudent);
 		System.out.println(newStudent);
 		
-		int updateStudId = 3;
+		int updateStudId = 4;
 		Student updateStudent = service.findStudentById(updateStudId);
 		ts = System.currentTimeMillis();//For creating unique student email
 		updateStudent.setEmail("student_"+ts+"@gmail.com");
@@ -51,7 +51,7 @@ public class JdbcStudentService
 		try
 		{
 			conn = getDatabaseConnection();
-			String sql = "select * from students where stud_id=?";
+			String sql = "select * from STUDENTS where stud_id=?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, studId);
 			ResultSet rs = pstmt.executeQuery();

@@ -26,11 +26,11 @@ import com.mybatis3.sqlproviders.TutorDynaSqlProvider;
 public interface TutorMapper 
 {
 	
-	@Select("select * from courses where tutor_id=#{tutorId}")
+	@Select("select * from COURSES where tutor_id=#{tutorId}")
 	@ResultMap("com.mybatis3.mappers.TutorMapper.CourseResult")
 	List<Course> selectCoursesByTutorId(int tutorId);
 	
-	@Select("SELECT tutor_id, t.name as tutor_name, email, addr_id FROM tutors t where t.tutor_id=#{tutorId}")
+	@Select("SELECT tutor_id, t.name as tutor_name, email, addr_id FROM TUTORS t where t.tutor_id=#{tutorId}")
 	@Results({
 		@Result(id=true, column="tutor_id", property="tutorId"),
 		@Result(column="tutor_name", property="name"),

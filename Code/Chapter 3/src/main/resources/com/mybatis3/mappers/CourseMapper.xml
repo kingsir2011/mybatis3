@@ -16,7 +16,7 @@
   	</resultMap>
   	
   	<select id="selectCoursesByTutor" parameterType="int" resultMap="CourseResult">
-  		select * from courses where tutor_id=#{tutorId}
+  		select * from COURSES where tutor_id=#{tutorId}
   	</select>
   	
   	<select id="searchCourses" parameterType="hashmap" resultMap="CourseResult" useCache="false">
